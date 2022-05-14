@@ -1,0 +1,42 @@
+{
+  "name": "chakra-select-component-pretear",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:AdamPrchal/chakra-select-component-pretear.git",
+  "contributors": [
+    "rixcian <rostislav.kremecek@protonmail.com>",
+    "Adam Prchal <PrchalAdam@outlook.cz>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.17.10",
+    "@chakra-ui/react": "^2.0.0",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "@vitejs/plugin-react": "^1.3.0",
+    "babel-loader": "^8.2.5",
+    "framer-motion": "^6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.9",
+    "vite-tsconfig-paths": "^3.4.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/builder-vite": "^0.1.33",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.11",
+    "storybook-addon-performance": "^0.16.1"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}
