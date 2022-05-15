@@ -11,6 +11,7 @@ import { Parameters, StoryContext } from '@storybook/react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { withPerformance } from 'storybook-addon-performance';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import theme from "@pretear/theme";
 
 /**
  * Add global context for RTL-LTR switching
@@ -60,7 +61,7 @@ const withChakra = (StoryFn: Function, context: StoryContext) => {
     <ChakraProvider
       theme={extendTheme({
         direction: dir,
-        // ...theme
+        ...theme
       })}
     >
       <div dir={dir} id="story-wrapper">

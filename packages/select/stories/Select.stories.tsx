@@ -1,8 +1,9 @@
 import React from 'react';
+import {Divider, Select as ChakraSelect} from '@chakra-ui/react';
 import { Container } from '@chakra-ui/layout';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Select } from '../src';
+import { Select, SelectButton } from '../src';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -23,11 +24,17 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Select> = (args) => (
-  <Select {...args}>
-    <option value="hello">Hello</option>
-    <option value="chello">Chello</option>
-    <option value="konichiwa">Konichiwa</option>
-  </Select>
+  <>
+    <ChakraSelect {...args}>
+      <option value="hello">Hello</option>
+      <option value="chello">Chello</option>
+      <option value="konichiwa">Konichiwa</option>
+    </ChakraSelect>
+    <Divider my={5} />
+    <Select>
+      <SelectButton>Hola</SelectButton>
+    </Select>
+  </>
 );
 
 export const Default = Template.bind({});

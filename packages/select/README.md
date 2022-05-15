@@ -1,4 +1,4 @@
-# Select
+# @pretear/select
 
 The Select component is a component that allows users pick a value from
 predefined options.
