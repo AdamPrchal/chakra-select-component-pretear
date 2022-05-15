@@ -1,0 +1,26 @@
+{
+  "name": "@pretear/theme",
+  "version": "1.0.0",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "src", "index.d.ts", "index.js", "index.mjs", "package.json"],
+  "scripts": {
+    "watch": "vite build --watch",
+    "build": "chakra-cli tokens src/theme && vite build"
+  },
+  "dependencies": {
+    "@pretear/theme": "1.0.0",
+    "@chakra-ui/anatomy": "2.0.0",
+    "@chakra-ui/theme-tools": "2.0.0",
+    "@chakra-ui/utils": "2.0.0"
+  },
+  "peerDependencies": {
+    "@chakra-ui/system": ">=2.0.0-next.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/cli": "2.0.0",
+    "@chakra-ui/system": "2.0.0"
+  }
+}
