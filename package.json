@@ -1,11 +1,14 @@
 {
-  "name": "chakra-select-component-pretear",
+  "name": "pretear",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:AdamPrchal/chakra-select-component-pretear.git",
   "contributors": [
     "rixcian <rostislav.kremecek@protonmail.com>",
     "Adam Prchal <PrchalAdam@outlook.cz>"
+  ],
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
   "license": "MIT",
   "dependencies": {

@@ -6,7 +6,7 @@ const toPath = (_path) => path.join(process.cwd(), _path)
 
 module.exports = {
   stories: [
-    '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
   ],
   "addons": [
     "@storybook/addon-links",
@@ -25,7 +25,7 @@ module.exports = {
       optimizeDeps: {
         ...config.optimizeDeps,
         entries: [
-          '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+          '../packages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
         ],
       },
       resolve: {

@@ -1,6 +1,6 @@
 import { create } from "@storybook/theming";
 // @ts-ignore
-import brandImage from "../src/_assets/pretear2.png";
+import brandImage from "../packages/_assets/pretear2.png";
 
 export default create({
   base: "light",
