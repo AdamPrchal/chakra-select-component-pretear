@@ -8,9 +8,9 @@ import {
   SystemStyleObject,
   ThemingProps,
   useMultiStyleConfig,
-  HTMLChakraProps, useStyles, StylesProvider,
+  HTMLChakraProps, StylesProvider,
 } from "@chakra-ui/system"
-import { cx, split, __DEV__, dataAttr } from "@chakra-ui/utils"
+import {cx, split, __DEV__, dataAttr} from "@chakra-ui/utils"
 import * as React from "react"
 
 type Omitted = "disabled" | "required" | "readOnly" | "size"
@@ -90,77 +90,6 @@ export interface SelectProps
   icon?: React.ReactElement<any>
 }
 
-/**
- * React component used to select one item from a list of options.
- */
-// export const Select = forwardRef<SelectProps, "select">((props, ref) => {
-//   const styles = useMultiStyleConfig("Select", props)
-//
-//   const {
-//     rootProps,
-//     placeholder,
-//     icon,
-//     color,
-//     height,
-//     h,
-//     minH,
-//     minHeight,
-//     iconColor,
-//     iconSize,
-//     ...rest
-//   } = omitThemingProps(props)
-//
-//   const [layoutProps, otherProps] = split(rest, layoutPropNames as any[])
-//
-//   const ownProps = useFormControl(otherProps)
-//
-//   const rootStyles: SystemStyleObject = {
-//     width: "100%",
-//     height: "fit-content",
-//     position: "relative",
-//     color,
-//   }
-//
-//   const fieldStyles: SystemStyleObject = mergeWith(
-//     { paddingEnd: "2rem" },
-//     styles.field,
-//     { _focus: { zIndex: "unset" } },
-//   )
-//
-//   return (
-//     <chakra.div
-//       className="chakra-select__wrapper"
-//       __css={rootStyles}
-//       {...layoutProps}
-//       {...rootProps}
-//     >
-//       <SelectField
-//         ref={ref}
-//         height={h ?? height}
-//         minH={minH ?? minHeight}
-//         placeholder={placeholder}
-//         {...ownProps}
-//         __css={fieldStyles}
-//       >
-//         {props.children}
-//       </SelectField>
-//
-//       <SelectIcon
-//         data-disabled={dataAttr(ownProps.disabled)}
-//         {...((iconColor || color) && { color: iconColor || color })}
-//         __css={styles.icon}
-//         {...(iconSize && { fontSize: iconSize })}
-//       >
-//         {icon}
-//       </SelectIcon>
-//     </chakra.div>
-//   )
-// })
-
-// if (__DEV__) {
-//   Select.displayName = "Select"
-// }
-
 export const DefaultIcon: React.FC<PropsOf<"svg">> = (props) => (
   <svg viewBox="0 0 24 24" {...props}>
     <path
@@ -211,69 +140,6 @@ if (__DEV__) {
   SelectIcon.displayName = "SelectIcon"
 }
 
-export interface SelectButtonProps extends HTMLChakraProps<"button"> {
-  /**
-   * The icon element to use in the select
-   * @type React.ReactElement
-   */
-  icon?: React.ReactElement<any>,
-  /**
-   * The size (width and height) of the icon
-   */
-  iconSize?: string
-  /**
-   * The color of the icon
-   */
-  iconColor?: string
-}
-
-export const SelectButton = forwardRef<SelectButtonProps, "button">(((props, ref) => {
-  const styles = useStyles()
-
-  const {
-    placeholder,
-    icon,
-    color,
-    height,
-    h,
-    minH,
-    minHeight,
-    iconColor,
-    iconSize,
-    ...rest
-  } = props
-
-  const [, otherProps] = split(rest, layoutPropNames as any[])
-
-  const ownProps = useFormControl(otherProps)
-
-  return (
-    <chakra.button
-      ref={ref}
-      {...props}
-      _css={{
-        width: "100%",
-        height: "fit-content",
-        position: "relative",
-      }}
-    >
-      <chakra.span
-        __css={{ pointerEvents: "none", flex: "1 1 auto", minW: 0 }}
-      >
-        {props.children}
-      </chakra.span>
-      <SelectIcon
-        data-disabled={dataAttr(ownProps.disabled)}
-        {...((iconColor || color) && { color: iconColor || color })}
-        __css={styles.icon}
-        {...(iconSize && { fontSize: iconSize })}
-      >
-        {icon}
-      </SelectIcon>
-    </chakra.button>
-  )
-}))
-
 export const Select = forwardRef<SelectProps, "select">((props, ref) => {
   const { children } = props
   const styles = useMultiStyleConfig("Select", props)
@@ -292,7 +158,8 @@ export const Select = forwardRef<SelectProps, "select">((props, ref) => {
     ...rest
   } = omitThemingProps(props)
 
-  const [layoutProps] = split(rest, layoutPropNames as any[])
+  const [layoutProps, otherProps] = split(rest, layoutPropNames as any[])
+  const ownProps = useFormControl(otherProps)
 
   const rootStyles: SystemStyleObject = {
     width: "100%",
@@ -310,8 +177,35 @@ export const Select = forwardRef<SelectProps, "select">((props, ref) => {
         {...layoutProps}
         {...rootProps}
       >
+        <chakra.button
+          __css={{
+            width: "100%",
+            height: "fit-content",
+            position: "relative",
+            textAlign: "left",
+            ...styles.field,
+          }}
+        >
+          <chakra.span
+            __css={{ pointerEvents: "none", flex: "1 1 auto", minW: 0 }}
+          >
+            Hello
+          </chakra.span>
+          <SelectIcon
+            data-disabled={dataAttr(ownProps.disabled)}
+            {...((iconColor || color) && { color: iconColor || color })}
+            __css={styles.icon}
+            {...(iconSize && { fontSize: iconSize })}
+          >
+            {icon}
+          </SelectIcon>
+        </chakra.button>
         {children}
       </chakra.div>
     </StylesProvider>
   )
 })
+
+if (__DEV__) {
+  Select.displayName = "Select"
+}

@@ -41,6 +41,7 @@
   "scripts": {
     "select:build": "yarn workspace @pretear/select run build",
     "theme:build": "yarn workspace @pretear/theme run build",
+    "theme:watch": "yarn workspace @pretear/theme run watch",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }

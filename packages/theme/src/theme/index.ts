@@ -9,13 +9,11 @@ const config: ThemeConfig = {
   cssVarPrefix: 'chakra',
 }
 
-const theme = extendTheme({
+export const theme = extendTheme({
   config,
   direction,
   components: {
     ...baseTheme.components,
-    Select
+    Select: Select
   },
 })
-
-export default theme;

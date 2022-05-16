@@ -11,7 +11,7 @@ import { Parameters, StoryContext } from '@storybook/react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { withPerformance } from 'storybook-addon-performance';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import theme from "@pretear/theme";
+import { theme } from "@pretear/theme";
 
 /**
  * Add global context for RTL-LTR switching
@@ -56,6 +56,8 @@ const withChakra = (StoryFn: Function, context: StoryContext) => {
   React.useEffect(() => {
     document.documentElement.dir = dir
   }, [dir])
+
+  console.log(theme);
 
   return (
     <ChakraProvider
