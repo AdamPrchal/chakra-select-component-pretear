@@ -46,17 +46,20 @@ const baseStyleList: SystemStyleFunction = (props) => {
     zIndex: 1,
     borderRadius: "md",
     borderWidth: "1px",
+    mt: "1",
   }
 }
 
 const baseStyleItem: SystemStyleFunction = (props) => {
   return {
-    bg: "pink",
     py: "0.4rem",
     px: "0.8rem",
     transitionProperty: "background",
     transitionDuration: "ultra-fast",
     transitionTimingFunction: "ease-in",
+    _hover: {
+      bg: mode("gray.100", "whiteAlpha.100")(props),
+    },
     _focus: {
       bg: mode("gray.100", "whiteAlpha.100")(props),
     },
@@ -88,15 +91,27 @@ const sizes: Record<string, PartsStyleObject<typeof parts>> = mergeWith(
   {
     lg: {
       field: iconSpacing,
+      item: {
+        fontSize: "lg",
+      },
     },
     md: {
       field: iconSpacing,
+      item: {
+        fontSize: "md",
+      },
     },
     sm: {
       field: iconSpacing,
+      item: {
+        fontSize: "sm",
+      },
     },
     xs: {
       field: iconSpacing,
+      item: {
+        fontSize: "xs",
+      },
       icon: { insetEnd: "0.25rem" },
     },
   },

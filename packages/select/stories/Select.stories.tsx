@@ -3,17 +3,16 @@ import {Box, Divider, Heading, HStack, Select as ChakraSelect} from '@chakra-ui/
 import { Container } from '@chakra-ui/layout';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Select } from '../src';
-import {SelectList} from "../src/SelectList";
+import { Select, SelectList, SelectItem } from '../src';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Components/Select',
   decorators: [
     (story: Function) => (
-      <Container maxWidth="400px" mt="40px">
+      <Box mt="40px">
         {story()}
-      </Container>
+      </Box>
     ),
   ],
   component: Select,
@@ -28,6 +27,14 @@ const Template: ComponentStory<typeof Select> = (args) => (
   <>
     <Heading as="h4" fontSize="1.5rem" mb={2}>Chakra Native Select</Heading>
     <HStack spacing={4}>
+      <Box>
+        <Heading as="h6" fontSize="1rem" mb={1}>xs</Heading>
+        <ChakraSelect size="xs">
+          <option value="hello">Hello</option>
+          <option value="chello">Chello</option>
+          <option value="konichiwa">Konichiwa</option>
+        </ChakraSelect>
+      </Box>
       <Box>
         <Heading as="h6" fontSize="1rem" mb={1}>sm</Heading>
         <ChakraSelect size="sm">
@@ -57,12 +64,22 @@ const Template: ComponentStory<typeof Select> = (args) => (
     <Heading as="h4" fontSize="1.5rem" mb={2}>Prétear Select</Heading>
     <HStack spacing={4}>
       <Box>
+        <Heading as="h6" fontSize="1rem" mb={1}>xs</Heading>
+        <Select size="xs">
+          <SelectList>
+            <SelectItem>Hello</SelectItem>
+            <SelectItem>Hola</SelectItem>
+            <SelectItem>Chello</SelectItem>
+          </SelectList>
+        </Select>
+      </Box>
+      <Box>
         <Heading as="h6" fontSize="1rem" mb={1}>sm</Heading>
         <Select size="sm">
           <SelectList>
-            <p>Hello</p>
-            <p>Hola</p>
-            <p>Chello</p>
+            <SelectItem>Hello</SelectItem>
+            <SelectItem>Hola</SelectItem>
+            <SelectItem>Chello</SelectItem>
           </SelectList>
         </Select>
       </Box>
@@ -70,9 +87,9 @@ const Template: ComponentStory<typeof Select> = (args) => (
         <Heading as="h6" fontSize="1rem" mb={1}>md</Heading>
         <Select size="md">
           <SelectList>
-            <p>Hello</p>
-            <p>Hola</p>
-            <p>Chello</p>
+            <SelectItem>Hello</SelectItem>
+            <SelectItem>Hola</SelectItem>
+            <SelectItem>Chello</SelectItem>
           </SelectList>
         </Select>
       </Box>
@@ -80,9 +97,9 @@ const Template: ComponentStory<typeof Select> = (args) => (
         <Heading as="h6" fontSize="1rem" mb={1}>lg</Heading>
         <Select size="lg">
           <SelectList>
-            <p>Hello</p>
-            <p>Hola</p>
-            <p>Chello</p>
+            <SelectItem>Hello</SelectItem>
+            <SelectItem>Hola</SelectItem>
+            <SelectItem>Chello</SelectItem>
           </SelectList>
         </Select>
       </Box>
