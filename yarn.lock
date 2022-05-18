@@ -1259,7 +1259,7 @@
   resolved "https://registry.yarnpkg.com/@chakra-ui/css-reset/-/css-reset-2.0.0.tgz#5592889f9a3d551112760ee5b12e4d4de52f0b5a"
   integrity sha512-9L+/5t+QdV5lSoJptn+zCkt23mdFoQYLdpJadKgRQ5jBxl640e+LGLu/3GV1MGdyqHN0V+GSAJqQiojRJPH/gg==
 
-"@chakra-ui/descendant@3.0.0":
+"@chakra-ui/descendant@3.0.0", "@chakra-ui/descendant@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@chakra-ui/descendant/-/descendant-3.0.0.tgz#aab75973d1f9bf61b446ede4da45d21d655c0754"
   integrity sha512-SZBrHnHtRSt6lYeelO3mK6oo69na+ERq/dhdVAkWrmcHCLJvbfjZ8YE7b4rl8/oSGMjI5m07RvcbX/rqak3hPw==
@@ -1412,7 +1412,7 @@
     "@chakra-ui/react-utils" "2.0.0"
     "@chakra-ui/utils" "2.0.0"
 
-"@chakra-ui/popper@3.0.0":
+"@chakra-ui/popper@3.0.0", "@chakra-ui/popper@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@chakra-ui/popper/-/popper-3.0.0.tgz#ab182bdb98b6951ac83e3102b4285fe368e344b6"
   integrity sha512-ROogHl6A1g/6nhWpugNt2+ixI80RS2yLxj8qrq3kRQiQreu9LgomPPHz7x1vzbSLoPkgQKoa+VsnMvSzDUnCwQ==
